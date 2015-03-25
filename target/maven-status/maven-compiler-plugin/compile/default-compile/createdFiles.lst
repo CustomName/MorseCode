@@ -1,7 +1,9 @@
 norg\nosite\morse\MorseSign$3.class
 norg\nosite\morse\MorseCoder.class
+norg\nosite\persistence\PropertiesReader.class
 norg\nosite\morse\MorseSign$4.class
 norg\nosite\morse\MorseSign$2.class
+norg\nosite\view\AppMorsable.class
 norg\nosite\view\Console.class
 norg\nosite\persistence\SoundResources.class
 norg\nosite\morse\MorseSign.class

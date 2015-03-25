@@ -8,10 +8,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
+ * Консольная реализация
  * Created by Alexey Radionenko
  * 3/24/2015
  */
-public class Console {
+public class Console implements AppMorsable {
 
     private static final String intro = "MorseCode: console edition";
 
@@ -19,18 +20,27 @@ public class Console {
 
     public Console(){}
 
-    public void run() throws IOException {
+    public void run(){
 
         System.out.println(intro);
         System.out.println("\"Exit\" is command to exit");
 
         while(true){
-            String text = in.readLine().toUpperCase();
+            String text = null;
+            try {
+                text = in.readLine().toUpperCase();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             if(text.toUpperCase().equals("EXIT"))
                 break;
 
-            doMorse(text);
+            try {
+                doMorse(text);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }

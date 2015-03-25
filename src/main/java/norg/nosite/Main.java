@@ -1,6 +1,7 @@
 package norg.nosite;
 
-import norg.nosite.view.Console;
+import norg.nosite.persistence.PropertiesReader;
+import norg.nosite.view.AppMorsable;
 
 import java.io.IOException;
 
@@ -14,10 +15,12 @@ public class Main {
      * Точка входа в приложение
      * @param args
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, IllegalAccessException, InstantiationException {
 
-        Console console = new Console();
-        console.run();
+        Class appType = Class.forName(PropertiesReader.getProperty("app.class.name"));
+
+        AppMorsable appMorsable = (AppMorsable)appType.newInstance();
+        appMorsable.run();
 
     }
 

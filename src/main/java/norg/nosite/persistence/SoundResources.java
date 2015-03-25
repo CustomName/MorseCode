@@ -15,8 +15,8 @@ public class SoundResources {
 
     private SoundResources(){
 
-        SOUND_DASH = getClass().getResource("/dash.wav");
-        SOUND_DOT = getClass().getResource("/dot.wav");
+        SOUND_DASH = getClass().getResource("/sounds/dash.wav");
+        SOUND_DOT = getClass().getResource("/sounds/dot.wav");
 
     }
 
